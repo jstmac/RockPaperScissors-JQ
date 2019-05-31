@@ -2,16 +2,18 @@ $(document).ready( function() {
   var optionsArr = ["Rock", "Paper", "Scissors"]
   var userChoice;
   var compChoice;
-  //var wins = 0
-  //var loses = 0
-  //var ties = 0
+  var wins = 0
+  var loses = 0
+  var ties = 0
     
-    $("#Rock").click(function(){
+    userChoice = $("#Rock").click(function(){
       alert("Rock");
       userChoice = "Rock";
       compChoice = optionsArr[Math.floor(Math.random() * optionsArr.length)];
       alert(compChoice);
       detWinner(userChoice, compChoice)
+    
+      
     });
 
     $("#Paper").click(function(){
@@ -78,5 +80,6 @@ $(document).ready( function() {
         alert("Tie");
         break;
       }
+      return (wins, loses, ties)
     }
 });
