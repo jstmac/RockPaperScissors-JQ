@@ -12,7 +12,7 @@ $(document).ready( function() {
       compChoice = optionsArr[Math.floor(Math.random() * optionsArr.length)];
       alert(compChoice);
       detWinner(userChoice, compChoice)
-    
+      
       
     });
 
@@ -22,6 +22,7 @@ $(document).ready( function() {
       var compChoice = optionsArr[Math.floor(Math.random() * optionsArr.length)];
       alert(compChoice)
       detWinner(userChoice, compChoice)
+   
     });
 
     $("#Scissors").click(function(){
@@ -38,48 +39,58 @@ $(document).ready( function() {
         case compChoice === "Rock" && userChoice === "Rock":
         ties++;
         alert("Tie!");
+        $('#results').text('Tie!')
         break;
 
-        case compChoice === "Rock" && userChoice === "Paper":
+        case compChoice === 'Rock' && userChoice === 'Paper':
         wins++;
-        alert("Winner!");
+        alert('Winner!');
+        $('#results').text('Winner!')
         break;
 
         case compChoice === "Rock" && userChoice === "Scissors":
         loses++;
-        alert("Sorry you lose!");
+        alert('Sorry you lose!')
+        $('#results').text('Sorry you lose!')
         break;
 
         case compChoice === "Paper" && userChoice === "Rock":
         loses++;
         alert("Sorry you lose!");
+        $('#results').text('Sorry you lose!')
         break;
 
         case compChoice === "Paper" && userChoice === "Paper":
         ties++;
         alert("Tie");
+        $('#results').text('Tie!')
         break;
 
         case compChoice === "Paper" && userChoice === "Scissors":
         wins++;
         alert("Winner!");
+        $('#results').text('Winner!')
         break;
 
         case compChoice === "Scissors" && userChoice === "Rock":
         wins++;
         alert("Winner!");
+        $('#results').text('Winner!')
         break;
 
         case compChoice === "Scissors" && userChoice === "Paper":
         loses++;
         alert("Sorry you lose");
+        $('#results').text('Sorry you lose!')
         break;
 
         case compChoice === "Scissors" && userChoice === "Scissors":
         ties++;
         alert("Tie");
+        $('#results').text('Tie')
         break;
       }
       return (wins, loses, ties)
+      
     }
 });
